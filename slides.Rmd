@@ -1,0 +1,45 @@
+---
+title: "Prediction of a diamond price"
+author: "Daria Stepanyan"
+date: "June 26, 2019"
+output: ioslides_presentation
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, message=FALSE, warning = FALSE, cache = TRUE)
+```
+
+## Purpose of the app
+This app is intended for demonstration of 'shiny' features for ['Developing Data Products'](https://www.coursera.org/learn/data-products/home/welcome) course on Coursera.
+
+The app is going to predict a price of a diamond based on its parameters using a linear model and display it on a plot.
+
+## Data
+
+Presented shiny app uses the 'diamonds' dataset from ggplot2 package in R. It contains the prices and other attributes of almost 54,000 diamonds.
+
+```{r data}
+str(diamonds)
+```
+
+## Model
+
+For prediction the following model was chosen. It's simple yet explains rather most of the variance
+
+```{r model}
+fit <- lm(price ~ carat + cut + color + clarity, data = diamonds)
+summary(fit)$r.squared
+```
+
+## Interface
+
+You can find the app here: 
+
+
+
+## Slide with Plot
+
+```{r pressure}
+plot(pressure)
+```
+
